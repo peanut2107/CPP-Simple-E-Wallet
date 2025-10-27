@@ -1,35 +1,35 @@
-#include <iostream>
-#include <string>
-#include <vector>
-#include <iomanip>
-using namespace std;
+#include <iostream>  //Memasukkan library iostream untuk input output
+#include <string>    //Memasukkan library string untuk menggunakan tipe data string
+#include <vector>    //Agar bisa menggunakan vector, yaitu daftar dinamis untuk riwayat transfer
+#include <iomanip>   //Agar bisa mengatur tampilan angka, seperti 2 angka di belakang koma
+using namespace std; //Agar tidak usah menulis std:: setiap di depan cout dan cin
 
 // Struktur data untuk menyimpan informasi dompet
-struct Dompet {
-    string pemilik;
-    string pin;
-    double saldo;
-};
+struct Dompet {     //Membuat struct bernama Dompet
+    string pemilik; //Membuat isi struct bernama pemilik dengan tipe data string
+    string pin;     //Mmebuat isi struct bernama pin dengan tipe data string
+    double saldo;   //Membuat isi struct bernama saldo dengan tipe data double
+};                  //Menutup struktur struct bernama Dompet
 
-int main() {
-    Dompet wallet;
-    wallet.saldo = 0;
-    vector<string> riwayat;
+int main() {                  //Membuat fungsi utama
+    Dompet wallet;            //Membuat objek wallet dari struct dompet
+    wallet.saldo = 0;         //Membuat saldo menjadi 0
+    vector<string> riwayat;   //Membuat vector atau daftar kosong bernama riwayat untuk riwayat transfer
 
-    cout << "Masukkan nama pemilik dompet: ";
-    getline(cin, wallet.pemilik);
+    cout << "Masukkan nama pemilik dompet: "; //Mencetak output "Masukkan nama pemilik dompet
+    getline(cin, wallet.pemilik);             //Mengambil dan membaca input dari user
 
-    cout << "Buat PIN untuk dompet Anda: ";
-    getline(cin, wallet.pin);
+    cout << "Buat PIN untuk dompet Anda: ";   //Mencetak output "Buat PIN untuk dompet anda
+    getline(cin, wallet.pin);                 //Mengambil dan membaca input dari user
 
-    string inputPin;
-    cout << "Masukkan PIN untuk akses dompet: ";
-    getline(cin, inputPin);
+    string inputPin;                              //Membuat variabel inputPin untuk menyimpan PIN yang akan di masukkan
+    cout << "Masukkan PIN untuk akses dompet: ";  //Mencetak output "Masukkan PIN untuk akses dompet"
+    getline(cin, inputPin);                       //Mengambil dan membaca input pin dari user
 
-    if (inputPin != wallet.pin) {
-        cout << "PIN salah! Akses ditolak." << endl;
-        return 0;
-    }
+    if (inputPin != wallet.pin) {                      //Jika PIN yang di masukkan bukan/tidak sama dengan PIN yang sudah di simpan maka:
+        cout << "PIN salah! Akses ditolak." << endl;   //Mencetak output "PIN salah! Akses ditolak: 
+        return 0;                                      //Mengakhiri program
+    }                                                  //Menutup blok if
 
     int pilihan;
     do {
