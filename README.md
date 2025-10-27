@@ -1,2 +1,3 @@
 # CPP-Simple-E-Wallet
-Simple E-Wallet program for school project with C++ language
+Kode ini untuk tugas proyek sekolah
+Penjelasan sudah ada di file kode
